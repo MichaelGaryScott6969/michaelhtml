@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,900');
+@font-face {
+    font-family: 'moskultra-bold_900';
+    src: url('./mosk_ultra-bold_900-webfont.woff2') format('woff2'),
+         url('../mosk_ultra-bold_900-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media (max-width: 768px) {
+  #intro-logo {
+    padding: 50px;
+    width: 100% !important;
+  }
+  #typed, .typedstuff { 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 200px; 
+    color: #fff;
+    font-size: 64px;
+  }
+  i {
+    font-size: 56px !important;
+  }
+}
+
+
+header {
+  position: relative;
+  height: 300px;
+  background-image: linear-gradient(#ff9d2f, #ff6126);
+  margin-top: 0;
+}
+
+#intro-logo {
+  padding: 50px;
+  width: 500px;
+}
+
+
+.parallax-img {
+  width: 100%;
+}
+
+#typed, .typedstuff { 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 200px; 
+  color: #fff;
+  font-size: 48px;
+}
+
+header h1 {
+  color: white;
+  margin-top: 0;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+@media (max-width: 699px) {
+  .svg--lg {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .svg--sm {
+    display: none;
+  }
+} 
+
+#video {
+  height: 100%;
+  margin-top: 0;
+}
+
+i {
+  color: #fff;
+}
+
+#info {
+  text-align: center !important;
+}
+
+.button-collapse {
+  padding: 40px;
+}
+
+.nav-button {
+  margin-top: 40px
+}
+
+.parallax-container {
+      height: 250px;
+    }
+
+.big-words h1 {
+  font-family: 'moskultra-bold_900';
+  font-size: 64px;
+  text-align: left;
+  margin-left: 50px;
+  color: #fff;
+}
+
+.big-words {
+  padding: 50px;
+}
+.small-icons {
+  margin-bottom: -50px;
+}
+
+.flat-img {
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-image: url(https://a.slack-edge.com/5eb00/img/landing/where_work_happens/illustration_wall.png);
+    transition: height .2s,width .2s;
+    will-change: height,width;
+    transform: translate3d(0,0,0);
+    height: 350px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .big-words h1 {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .big-words h1 {
+    font-size: 48px;
+  }
+  .flat-img {
+  max-height: 600px
+}
+}
