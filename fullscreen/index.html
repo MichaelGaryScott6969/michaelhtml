@@ -2,17 +2,18 @@
 <html>
 	<head lang="en">
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Body background example</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 		<link rel="stylesheet" href="dist/homepage.css">
-
 	</head>
 	<body>
 		<section data-vide-bg="video/ocean" id="video">
 			<ul id="slide-out" class="side-nav">
-				<li>
+				<li><div class="userView">
+				</div></li>
 				<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
 				<li><a href="#!">Second Link</a></li>
 				<li><div class="divider"></div></li>
@@ -23,23 +24,21 @@
 			<div class="container-fluid">
 				<center><img src="dist/logo.png" class="animated zoomInDown" id="intro-logo"></center>
 				<div id="typed-strings">
-					<p>A refreshing update to the Toontown experience.</p>
-					<p>A step forward in terms of security.</p>
-					<p>An innovative approach to game mechanics.</p>
-					<p>A brand new Toontown experience</p>
-					<p>New features, tweaks and more</p>
-					<p>Making the game more fun for everyone.</p>
-					<p>Welcome back, Toontown.</p>
+					<p>A refreshing update to the Toontown experience. </p>
+					<p>A step forward in terms of security. </p>
+					<p>An innovative approach to the game's mechanics. </p>
+					<p>A brand new Toontown experience. </p>
+					<p>New features, tweaks and more. </p>
+					<p>Making the game more fun for everyone. </p>
+					<p>Welcome back, Toontown. </p>
 				</div>
-				<div class="center-align"><h1 class="typedstuff"><span id="typed"></span></h1></div>
-				<br><br>
-				<br><br>
-				<center><a href="#info" class="info-button"><i class="material-icons medium animated down-arrow">keyboard_arrow_down</i></a></center>
+				<div class="container center-align"><h1 class="typedstuff"><span id="typed"></span></h1></div>
+				<div class="center-align"><a href="#info" class="info-button"><i class="material-icons medium animated down-arrow">keyboard_arrow_down</i></a></div>
 			</div>
 		</section>
 		
 		<div class="parallax-container">
-			<div class="parallax"><img src="img/shot 8.png" class="parallax-img"></div>
+			<div class="parallax"><img src="img/shot 8.png"></div>
 		</div>
 		<div class="section pink lighten-2" id="info">
 			<div class="row valign-wrapper">
@@ -48,18 +47,17 @@
 						<h1>Created by Toontown Lovers,</h1>
 						<h1>For Toontown Lovers.</h1>
 					</div>
-					
 				</div>
 				<div class="col l4 m6 hide-on-small-only">
 					<div class="flat-img"></div>
 				</div>
 			</div>
-			<div class="hide-on-med-and-up small-icons">
-				<img src="https://a.slack-edge.com/cbe6f/img/landing/where_work_happens/illos-mobile.png" class="responsive-img">
+			<div class="hide-on-med-and-up small-icons-wrapper center-align">
+				<img src="https://a.slack-edge.com/cbe6f/img/landing/where_work_happens/illos-mobile.png" class="small-icons">
 			</div>
 		</div>
 		<div class="parallax-container">
-			<div class="parallax"><img src="img/shot 1.png" class="parallax-img"></div>
+			<div class="parallax"><img src="img/shot 2.png" class="parallax-img"></div>
 		</div>
 		<div class="section white" id="info">
 			<div class="row container">
@@ -67,7 +65,7 @@
 				<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
 			</div>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Compiled and minified CSS -->
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
@@ -87,34 +85,39 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
 		<script>
 		var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		
 		$('#intro-logo').one(animationend, function () {
-		$(this).removeClass('zoomInDown');
-		$(this).addClass('pulse infinite');
-		$('i.animated').addClass('bounce');
+			$(this).removeClass('zoomInDown');
+			$(this).addClass('pulse infinite');
+			$('i.animated').addClass('bounce');
 		});
+		
 		$(function(){
-		$("#typed").typed({
-		stringsElement: $('#typed-strings'),
-		startDelay: 2000,
-		backDelay: 1000
+			$("#typed").typed({
+				stringsElement: $('#typed-strings'),
+				startDelay: 2000,
+				backDelay: 1000,
+				contentType: 'text'
+			});
 		});
-		});
+		
 		$(document).ready(function(){
-		$('.parallax').parallax();
+			$('.parallax').parallax();
 		});
+		
 		$(function() {
-		$('a[href*="#"]:not([href="#"])').click(function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		var target = $(this.hash);
-		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		if (target.length) {
-		$('html, body').animate({
-		scrollTop: target.offset().top
-		}, 1000);
-		return false;
-		}
-		}
-		});
+			$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+					return false;
+					}
+				}
+			});
 		});
 		</script>
 	</body>
